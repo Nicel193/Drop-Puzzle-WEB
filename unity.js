@@ -6,7 +6,7 @@ function getUserIdFromUrl() {
 function sendUserIdToUnity(unityInstance) {
     const userId = getUserIdFromUrl();
     if (userId) {
-        console.log('User ID:', userId);
+        // console.log('User ID:', userId);
 
         setTimeout(function() {
             if (typeof unityInstance !== 'undefined') {
