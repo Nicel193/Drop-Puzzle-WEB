@@ -7,6 +7,7 @@
   <title>Unity WebGL Player | Drop Puzzle</title>
   <link rel="shortcut icon" href="TemplateData/favicon.ico">
   <link rel="stylesheet" href="TemplateData/style.css">
+  <script src="unity.js"></script>
 </head>
 
 <body>
@@ -32,11 +33,6 @@
     var progressBarFull = document.querySelector("#unity-progress-bar-full");
     var fullscreenButton = document.querySelector("#unity-fullscreen-button");
     var warningBanner = document.querySelector("#unity-warning");
-
-    function getUserIdFromUrl() {
-      const params = new URLSearchParams(window.location.search);
-      return params.get('userId');
-    }
 
     // Shows a temporary message banner/ribbon for a few seconds, or
     // a permanent error message on top of the canvas if type=='error'.
@@ -96,14 +92,9 @@
       // performance, uncomment the following line:
       // config.devicePixelRatio = 1;
     } else {
-      // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-
       canvas.style.width = "1080px";
       canvas.style.height = "1920px";
     }
-
-    unityShowBanner(`Telegram user id: ${getUserIdFromUrl()}`);
-
     loadingBar.style.display = "block";
 
     var script = document.createElement("script");
@@ -116,6 +107,8 @@
         fullscreenButton.onclick = () => {
           unityInstance.SetFullscreen(1);
         };
+
+        sendUserIdToUnity(unityInstance);
       }).catch((message) => {
         alert(message);
       });
