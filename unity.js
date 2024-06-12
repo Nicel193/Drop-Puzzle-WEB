@@ -8,11 +8,13 @@ function sendUserIdToUnity(unityInstance) {
     if (userId) {
         console.log('User ID:', userId);
 
-        if (typeof unityInstance !== 'undefined') {
-            unityInstance.SendMessage('UserIdReceiver', 'ReceiveUserId', userId);
-        } else {
-            console.error('Unity instance is not defined');
-        }
+        setTimeout(function() {
+            if (typeof unityInstance !== 'undefined') {
+                unityInstance.SendMessage('UserIdReceiver', 'ReceiveUserId', userId);
+            } else {
+                console.error('Unity instance is not defined');
+            }
+        }, 5000);
     } else {
         console.log('User ID не найден');
     }
