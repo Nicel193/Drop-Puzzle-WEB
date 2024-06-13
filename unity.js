@@ -6,8 +6,6 @@ function getUserIdFromUrl() {
 }
 
 function onUnitySceneLoaded() {
-    window.alert("Hello, world!");
-
     const userId = getUserIdFromUrl();
 
     if (userId) {
