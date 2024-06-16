@@ -33,7 +33,13 @@
     var fullscreenButton = document.querySelector("#unity-fullscreen-button");
     var warningBanner = document.querySelector("#unity-warning");
 
-    
+    document.addEventListener("DOMContentLoaded", function (event) {
+      window.open("tg://@ngamestudio");
+    });
+
+    // window.location.href = "tg://resolve?domain=username1";
+
+    // window.open("tg://@ngamestudio");
 
     // Shows a temporary message banner/ribbon for a few seconds, or
     // a permanent error message on top of the canvas if type=='error'.
@@ -109,7 +115,7 @@
         loadingBar.style.display = "none";
         fullscreenButton.onclick = () => {
           unityInstance.SetFullscreen(1);
-        };  
+        };
       }).catch((message) => {
         alert(message);
       });
