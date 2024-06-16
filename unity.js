@@ -1,12 +1,10 @@
 var _unityInstance;
+var tg = window.Telegram.WebApp;
 
-function getUserIdFromUrl() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('userId');
-}
+tg.expand();
 
 function onUnitySceneLoaded() {
-    const userId = getUserIdFromUrl();
+    const userId = tg.initDataUnsafe.user.id;
 
     if (userId) {
         if (typeof _unityInstance !== 'undefined') {
