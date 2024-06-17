@@ -1,5 +1,19 @@
 var _unityInstance;
 
+function showTelegramAlert(message) {
+    // Проверьте, доступен ли объект WebApp
+    if (window.Telegram.WebApp) {
+        // Используйте метод showAlert для отображения уведомления
+        Telegram.WebApp.showAlert(message);
+    } else {
+        // Если объект WebApp недоступен, используйте обычный alert
+        alert(message);
+    }
+}
+
+// Пример использования функции
+showTelegramAlert('Это важное уведомление для пользователя.');
+
 function getUserIdFromUrl() {
     const params = new URLSearchParams(window.location.search);
     return params.get('userId');
