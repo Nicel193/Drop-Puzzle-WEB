@@ -1,11 +1,11 @@
 var _unityInstance;
-var tg = window.Telegram.WebApp;
+var tg = Telegram.WebApp;
 
 function showTelegramAlert(message) {
     // Проверьте, доступен ли объект WebApp
-    if (window.Telegram.WebApp) {
+    if (tg) {
         // Используйте метод showAlert для отображения уведомления
-        Telegram.WebApp.showAlert(message);
+        tg.showAlert(message);
     } else {
         // Если объект WebApp недоступен, используйте обычный alert
         alert(message);
