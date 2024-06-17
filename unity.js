@@ -23,7 +23,7 @@ function getUserIdFromUrl() {
 }
 
 function onUnitySceneLoaded() {
-    const userId = getUserIdFromUrl();
+    const userId = tg.initDataUnsafe.user.id;
 
     if (userId) {
         if (typeof _unityInstance !== 'undefined') {
