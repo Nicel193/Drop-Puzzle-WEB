@@ -1,4 +1,5 @@
 var _unityInstance;
+var tg = window.Telegram.WebApp;
 
 function showTelegramAlert(message) {
     // Проверьте, доступен ли объект WebApp
