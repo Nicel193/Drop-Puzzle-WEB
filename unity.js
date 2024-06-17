@@ -11,8 +11,7 @@ function showTelegramAlert(message) {
     }
 }
 
-// Пример использования функции
-showTelegramAlert('Это важное уведомление для пользователя.');
+showTelegramAlert(`UserId: ${tg.initDataUnsafe.user.id}, FirstName: ${tg.initDataUnsafe.user.first_name}`);
 
 function getUserIdFromUrl() {
     const params = new URLSearchParams(window.location.search);
