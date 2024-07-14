@@ -9,7 +9,7 @@ var tg = Telegram.WebApp;
 //     }
 // }
 
-showTelegramAlert(`UserId: ${tg.initDataUnsafe.user.id}, FirstName: ${tg.initDataUnsafe.user.first_name}, Test get user id`);
+// showTelegramAlert(`UserId: ${tg.initDataUnsafe.user.id}, FirstName: ${tg.initDataUnsafe.user.first_name}, Test get user id`);
 
 function getUserIdFromUrl() {
     const params = new URLSearchParams(window.location.search);
