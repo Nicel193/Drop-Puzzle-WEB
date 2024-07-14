@@ -1,15 +1,35 @@
 var _unityInstance;
 var tg = Telegram.WebApp;
 
-// function showTelegramAlert(message) {
-//     if (tg) {
-//         tg.showAlert(message);
-//     } else {
-//         alert(message);
-//     }
-// }
+function showTelegramAlert(message) {
+    if (tg) {
+        tg.showAlert(message);
+    } else {
+        alert(message);
+    }
+}
 
-// showTelegramAlert(`UserId: ${tg.initDataUnsafe.user.id}, FirstName: ${tg.initDataUnsafe.user.first_name}, Test get user id`);
+function isMobile() {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    if (/android/i.test(userAgent)) {
+        return true;
+    }
+
+    if (/iPhone|iPad|iPod/i.test(userAgent)) {
+        return true;
+    }
+
+    if (/windows phone/i.test(userAgent)) {
+        return true;
+    }
+
+    return false;
+}
+
+if(!isMobile()){
+    showTelegramAlert("Not available for PC")
+}
 
 function getUserIdFromUrl() {
     const params = new URLSearchParams(window.location.search);
